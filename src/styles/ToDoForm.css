@@ -1,0 +1,48 @@
+.ToDoForm-inputText {
+  width: 15vw;
+  height: 5vh;
+  font-size: 120%;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+}
+.ToDoForm-inputCheckBox {
+  width: 2vw;
+  height: 2vh;
+}
+.ToDoForm-general {
+  width: 15vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ToDoForm-flexbox-col {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(93, 93, 255);
+  border-right: 2px solid rgb(59, 59, 255);
+  box-shadow: 1px 0px 10px -1px rgb(59, 59, 255);
+  width: 50vw;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ToDoForm-flexbox-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+.ToDoForm-button {
+  width: 15vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+}
+.AdditionToDo-list {
+  width: 40vw;
+  min-height: 20vw;
+  border: 0.5px solid black;
+}

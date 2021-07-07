@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+}
+.todos-components-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  margin-left: 20px;
+}
