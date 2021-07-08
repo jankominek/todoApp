@@ -26,7 +26,7 @@ const ToDoForm = (props) => {
                                 ></input>
                         </div>
                     
-                        <input className="ToDoForm-inputText"></input>
+                        <input className="ToDoForm-inputText" type="date"></input>
                     </div>
 
                     

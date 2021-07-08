@@ -10,7 +10,7 @@ function App() {
         numOfAddition: 0,
         ifAdditionReady: false,
         title: "a",
-        priority: false,
+        priority: true,
         additionList : [
           {
           name: "a1"
@@ -44,15 +44,17 @@ function App() {
         priority: false,
         additionList : []
       },
-    ]
+    ],
+    doneTodos : []
   })
+
 
   const [todoObject, setTodoObject] = useState({
     numOfAddition: 0,
     ifAdditionReady: false,
     title: "",
     priority: false,
-    additionList : []
+    additionList : [{}]
   })
 
  const  handleSubmitForm = (e) => {
@@ -74,10 +76,32 @@ function App() {
     console.log("add")
   }
 
-  let list = todo.todos.map( element => (
-    <ToDoComponent todoElement={element}/>
-  ))
-  console.log(todo.todos);
+  const handleDelete = (elementToDelete) => {
+    let newTodos = todo.todos.filter( (element) => {
+          if(element !== elementToDelete) return element;
+    });
+
+    setTodo({
+      todos: newTodos
+    })
+  }
+  const handleAddtoDone = (doneElement) => {
+    console.log(doneElement)
+    setTodo({
+      ...todo,
+        doneTodos:[...todo.doneTodos, doneElement]
+    })
+    console.log(todo.doneTodos)
+  }
+
+  let notDoneTodos = todo.todos.map( (element,index) => (
+    <ToDoComponent key={index} todoElement={element} delete={handleDelete} addToDone={handleAddtoDone}/>
+  ));
+
+  let doneTodos = todo.doneTodos.map( (element, index) => (
+      <ToDoComponent key={index} doneElement={element} />
+  ));
+  //console.log(todo.todos);
   return (
     <div className="App">
       <div className="flexbox">
@@ -87,8 +111,14 @@ function App() {
               numAddition={todo.numOfAddition} 
               handleIncrementAddition={handleAddAddition}/>
         </div>
-        <div className="todos-components-container">
-            {list}
+        <div className="flexbox-col">
+          <div className="todos-components-container">
+              {notDoneTodos}
+          </div>
+          <h1>Done tasks</h1>
+          <div className="todos-done-container">
+              {doneTodos}
+          </div>
         </div>
         
       </div>
